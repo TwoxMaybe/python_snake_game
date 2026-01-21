@@ -1,6 +1,6 @@
 import random
 from turtle import Turtle
-class Food(Turtle): # <--- Herencia
+class Food(Turtle):
     def __init__(self):
         super().__init__()
         self.shape("circle")
@@ -10,8 +10,10 @@ class Food(Turtle): # <--- Herencia
         self.refresh()
 
     def refresh(self):
-        """Mueve la comida a una coordenada aleatoria nueva."""
+
+        """Moves randomly the food to a new position"""
         new_x = random.randint(-300,300)
         new_y = random.randint(-300,300)
         self.setposition(new_x,new_y)
+
         return
