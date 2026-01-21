@@ -3,53 +3,49 @@ from Snake import Snake
 from Food import Food
 import time
 
-# --- Configuración Global ---
-
-#Configuración de la pantalla
+#Screen configuration
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.title("Snake")
 screen.bgcolor("black")
-screen.tracer(0) #Para apagar las animaciones automaticas
+screen.tracer(0) #Off automatic animations
 
-#Configuración de los objetos
+#Objects creation
 snake = Snake()
 food = Food()
 
-# Configuración de las teclas
-screen.listen() # Habilita la ventana para recibir señales
+# Controls keys configurations
+screen.listen()
 screen.onkey(snake.up, "Up")
 screen.onkey(snake.left, "Left")
 screen.onkey(snake.right, "Right")
 screen.onkey(snake.down, "Down")
 
-
-#Variables de control
+#Control variable
 game_is_on = True
 
-#Bucle principal
+#Principal loop
 while game_is_on:
-    screen.update() # Refresca la pantalla manualmente
+    screen.update() # Refresh automatically the screen
     time.sleep(0.1)
     snake.move()
 
-# 1. Detectar colisión con comida
+    #Detect the coalition with the food
     if snake.segments[0].distance(food) < 15:
-        pass # ¿Qué pasa aquí? (Mover comida, extender serpiente)
         food.refresh()
         snake.extend()
 
-    # 2. Detectar colisión con pared
+    #Detect coalition with the vertical walls
     if snake.segments[0].xcor() > 300 or snake.segments[0].xcor() < -300:
         game_is_on = False
         print("GAME OVER")
 
+    # Detect coalition with the horizontal walls
     elif snake.segments[0].ycor() > 300 or snake.segments[0].ycor() < -300:
         game_is_on = False
         print("GAME OVER")
 
-    # 3. Detectar colisión con la cola
-    # Pista: Hay que iterar sobre los segmentos (menos la cabeza)
+    #Detect coalitions with the tail
     for segment in snake.segments[1:]:
         if snake.segments[0].distance(segment) < 10:
             game_is_on = False
