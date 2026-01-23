@@ -26,7 +26,7 @@ class Snake:
 
     def add_segment(self, position: tuple[int, int]) -> None:
         """Create the segment and configurate his 
-        appearance to append it to the body of the snake.""""
+        appearance to append it to the body of the snake."""
 
         #We create the object turtle
         segment = Turtle()

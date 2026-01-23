@@ -12,8 +12,8 @@ class Food(Turtle):
     def refresh(self):
 
         """Moves randomly the food to a new position"""
-        new_x = random.randint(-300,300)
-        new_y = random.randint(-300,300)
+        new_x = random.randint(-290,290)
+        new_y = random.randint(-290,290)
         self.setposition(new_x,new_y)
 
         return
