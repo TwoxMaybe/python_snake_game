@@ -34,24 +34,16 @@ while game_is_on:
     time.sleep(0.1)
     snake.move()
 
-    #Detect the coalition with the food
+    #Detect the collision with the food
     if snake.segments[0].distance(food) < 15:
         food.refresh()
         snake.extend()
         scoreboard.add_point()
 
-    #Detect coalition with the vertical walls
-    if snake.segments[0].xcor() > 290 or snake.segments[0].xcor() < -290:
+    #Detect the collision with the walls or with himself
+    if snake.check_collision():
         game_is_on = False
 
-    # Detect coalition with the horizontal walls
-    elif snake.segments[0].ycor() > 290 or snake.segments[0].ycor() < -290:
-        game_is_on = False
-
-    #Detect coalitions with the tail
-    for segment in snake.segments[1:]:
-        if snake.segments[0].distance(segment) < 10:
-            game_is_on = False
 
 #Game over message
 scoreboard.show_end_game()

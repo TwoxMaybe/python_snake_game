@@ -97,3 +97,22 @@ class Snake:
         """Appends a new segment to the body"""
         self.add_segment(self.segments[-1].position())
         return
+
+    def check_collision(self) -> bool | None:
+        """Checks if the snake has collided with the walls or with himself"""
+
+        # Detect coalition with the vertical walls
+        if self.segments[0].xcor() > 290 or self.segments[0].xcor() < -290:
+            return True
+
+        # Detect coalition with the horizontal walls
+        elif self.segments[0].ycor() > 290 or self.segments[0].ycor() < -290:
+            return True
+
+        # Detect coalitions with the tail
+        for segment in self.segments[1:]:
+            if self.segments[0].distance(segment) < 10:
+                return True
+        return None
+
+
