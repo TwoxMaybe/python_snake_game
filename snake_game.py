@@ -43,12 +43,10 @@ while game_is_on:
     #Detect coalition with the vertical walls
     if snake.segments[0].xcor() > 290 or snake.segments[0].xcor() < -290:
         game_is_on = False
-        print("GAME OVER")
 
     # Detect coalition with the horizontal walls
     elif snake.segments[0].ycor() > 290 or snake.segments[0].ycor() < -290:
         game_is_on = False
-        print("GAME OVER")
 
     #Detect coalitions with the tail
     for segment in snake.segments[1:]:
