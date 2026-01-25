@@ -15,7 +15,7 @@ class Score(Turtle):
 
     def show_score(self) -> None:
         """Show the actual score"""
-        self.write("Puntuación: " + str(self.score), False, "center", ("Arial", 18, "normal"))
+        self.write("Score: " + str(self.score), False, "center", ("Arial", 18, "normal"))
         return
 
     def show_end_game(self) -> None:
