@@ -7,7 +7,7 @@ import time
 #Screen configuration
 screen = Screen()
 screen.setup(width=600, height=600)
-screen.title("Snake")
+screen.title("Snake_game")
 screen.bgcolor("black")
 screen.tracer(0) #Off automatic animations
 
