@@ -22,10 +22,10 @@ This is Version 2.0.
 
 Status: Fully functional.
 
-For this moment all the features that i wanted was implemented.
-
 Add sound effects.
 
 Fine-tune the UI/UX for a more polished aesthetic.
+
+After of that all the features that i wanted will be implemented.
 
 Developed by [Cristhian Navas (TwoXMaybe)]
